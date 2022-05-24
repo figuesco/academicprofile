@@ -24,17 +24,21 @@ class UserProfileView(APIView):
         serializer = UserProfileSerializer(data=data)
         serializer.is_valid(raise_exception=True)
 
+        level = serializer.data ["level"]
         name = serializer.data["name"]
         institution = serializer.data["institution"]
         duration = serializer.data["duration"]
+        status = serializer.data ["status"]
 
         user_id = request.user.id
 
         user_profile = UserProfile.objects.Create(
             user_id=user_id,
+            level=level,
             name=name,
             institution=institution,
-            duration=duration
+            duration=duration,
+            status=status
 
         )
 
