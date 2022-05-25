@@ -12,4 +12,4 @@ class academicprofileSerializer(seralizers.ModelSerializer):
 
 class Meta:
     model:academicprofile
-    fields = ['name', 'institution', 'duration']
+    fields = ['level', 'name', 'institution', 'duration', 'status']
