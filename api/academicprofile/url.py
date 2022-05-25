@@ -7,5 +7,5 @@ from academicprofile.views import UserProfileView
 from academicprofile.models import UserProfile
 
 urlpatterns =[
-    path('auth/academicprofile/', UserProfileView.as_view()),
+    path('auth/academicprofile/', academicprofileView.as_view()),
 ]

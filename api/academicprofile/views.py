@@ -15,13 +15,13 @@ from academicprofile.models import UserProfile
 
 from academicprofile.serializers import UserProfileSerializer
 
-class UserProfileView(APIView):
+class academicprofileView(APIView):
     permission_classes = [permissions.IsAuthenticated]
     user = User.objects.filter(is_active=True)
 
     def post(self, request):
         data = request.data
-        serializer = UserProfileSerializer(data=data)
+        serializer = academicprofileSerializer(data=data)
         serializer.is_valid(raise_exception=True)
 
         level = serializer.data ["level"]
@@ -32,7 +32,7 @@ class UserProfileView(APIView):
 
         user_id = request.user.id
 
-        user_profile = UserProfile.objects.Create(
+        academicprofile = academicprofile.objects.Create(
             user_id=user_id,
             level=level,
             name=name,
@@ -42,7 +42,7 @@ class UserProfileView(APIView):
 
         )
 
-        user_profile.save()
+        academicprofile.save()
 
         response = {
             "success": "Guardado satisfactorio",

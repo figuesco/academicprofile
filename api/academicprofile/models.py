@@ -5,7 +5,7 @@ from users.models import User
 from tkinter import CASCADE
 from django.conf import settings
 
-class UserProfile(models.Model):
+class academicprofile(models.Model):
 
     level =(
         (1, 'Carrera tecnica'),
