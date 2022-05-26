@@ -11,7 +11,7 @@ from rest_framework import permissions
 from django.conf import settings
 
 from users.models import User
-from academicprofile.models import UserProfile
+from academicprofile.models import  academicprofile
 
 from academicprofile.serializers import UserProfileSerializer
 
