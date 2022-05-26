@@ -13,7 +13,7 @@ from django.conf import settings
 from users.models import User
 from academicprofile.models import  academicprofile
 
-from academicprofile.serializers import academicprofileSerializers
+from academicprofile.serializers import academicprofile
 
 class academicprofileView(APIView):
     permission_classes = [permissions.IsAuthenticated]
