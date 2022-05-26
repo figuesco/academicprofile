@@ -2,7 +2,7 @@ from django import views
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.authtoken import views
-from academicprofile.views import academicprofileViews
+from academicprofile.views import academicprofileView
 
 from users.views import UserSignupView, ResourceView, VerifyEmail, UserLoginView
 
