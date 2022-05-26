@@ -1,5 +1,5 @@
 from rest_framework import seralizers
-from academicprofile.models import UserProfile
+from academicprofile.models import academicprofile
 from users.models import User
 
 
