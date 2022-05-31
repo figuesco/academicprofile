@@ -49,6 +49,24 @@ class academicprofileView(APIView):
             "status": status.HTTP_200_OK
         }
         return Response(response)
+    
+    def find_answers(request):
+        id_profile = request.Get.get('id')
+        profile = perfil_academic.objects.filter(perfil_id=id)
+        for ex in profile:
+            academicprofile = academicprofile.objects.filter(id= ex.profile_id)
+            academicprofile = list(academicprofile.values())
+        return jsonResponse({'academicprofile': academicprofile})
+
+    def find_answers(request):
+        return {
+            'id': academicprofile.codigo,
+            'level':academicprofile.level,
+            'name': academicprofile.name,
+            'institution':academicprofile.institution,
+            'duration': academicprofile.duration,
+            'status':academicprofile.status
+        }    
 
 
 
