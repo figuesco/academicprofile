@@ -13,7 +13,7 @@ from django.conf import settings
 from users.models import User
 from academicprofile.models import  academicprofile
 
-from academicprofile.serializers import academicprofile
+from academicprofile.serializers import academicprofileSerializer
 
 class academicprofileView(APIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -28,24 +28,24 @@ class academicprofileView(APIView):
         name = serializer.data["name"]
         institution = serializer.data["institution"]
         duration = serializer.data["duration"]
-        status = serializer.data ["status"]
+        status_academic = serializer.data ["status_academic"]
 
         user_id = request.user.id
 
-        academicprofile = academicprofile.objects.Create(
+        academic_profile = academicprofile.objects.create(
             user_id=user_id,
             level=level,
             name=name,
             institution=institution,
             duration=duration,
-            status=status
+            status_academic=status_academic
 
         )
 
-        academicprofile.save()
+        academic_profile.save()
 
         response = {
-            "success": "Guardado satisfactorio",
+            "success": "Datos personales guardados correctamente",
             "status": status.HTTP_200_OK
         }
         return Response(response)
@@ -54,18 +54,18 @@ class academicprofileView(APIView):
         id_profile = request.Get.get('id')
         profile = perfil_academic.objects.filter(perfil_id=id)
         for ex in profile:
-            academicprofile = academicprofile.objects.filter(id= ex.profile_id)
-            academicprofile = list(academicprofile.values())
-        return jsonResponse({'academicprofile': academicprofile})
+            academic_profile = academic_profile.objects.filter(id= ex.profile_id)
+            academic_profile = list(academic_profile.values())
+        return jsonResponse({'academicprofile': academic_profile})
 
     def find_answers(request):
         return {
-            'id': academicprofile.codigo,
-            'level':academicprofile.level,
-            'name': academicprofile.name,
-            'institution':academicprofile.institution,
-            'duration': academicprofile.duration,
-            'status':academicprofile.status
+            'id': academic_profile.codigo,
+            'level':academic_profile.level,
+            'name': academic_profile.name,
+            'institution':academic_profile.institution,
+            'duration': academic_profile.duration,
+            'status_academic':academic_profile.status
         }    
 
 

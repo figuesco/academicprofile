@@ -8,8 +8,8 @@ class academicprofileSerializer(serializers.ModelSerializer):
     name = serializers.CharField()
     institution = serializers.CharField()
     duration = serializers.CharField()
-    status = serializers.CharField()
+    status_academic = serializers.CharField()
 
 class Meta:
-    model:academicprofile
-    fields = ['level', 'name', 'institution', 'duration', 'status']
+    model = academicprofile
+    fields = ['level', 'name', 'institution', 'duration', 'status_academic']
