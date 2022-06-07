@@ -10,6 +10,7 @@ class academicprofileSerializer(serializers.ModelSerializer):
     duration = serializers.CharField()
     status_academic = serializers.CharField()
 
-class Meta:
-    model = academicprofile
-    fields = ['level', 'name', 'institution', 'duration', 'status_academic']
+    class Meta:
+           model = academicprofile
+           fields = ['level', 'name', 'institution', 'duration', 'status_academic']
+              
