@@ -67,7 +67,3 @@ class academicprofileView(APIView):
             'duration': academic_profile.duration,
             'status_academic':academic_profile.status
         }    
-
-
-
-
