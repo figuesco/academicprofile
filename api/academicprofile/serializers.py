@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from academicprofile.models import academicprofile
-from users.models import User
+
 
 
 class academicprofileSerializer(serializers.ModelSerializer):
@@ -8,7 +8,7 @@ class academicprofileSerializer(serializers.ModelSerializer):
     name = serializers.CharField()
     institution = serializers.CharField()
     duration = serializers.CharField()
-    status_academic = serializers.CharField()
+    status_academic= serializers.CharField()
 
     class Meta:
            model = academicprofile
