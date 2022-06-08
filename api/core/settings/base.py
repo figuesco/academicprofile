@@ -207,7 +207,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'hack.20.mp@gmail.com'
-EMAIL_HOST_PASSWORD = 'equipo20'
+EMAIL_HOST_PASSWORD = 'pzpkcjocukkmmgun'
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=25),
