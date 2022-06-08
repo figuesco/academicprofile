@@ -66,4 +66,19 @@ class academicprofileView(APIView):
             'institution':academic_profile.institution,
             'duration': academic_profile.duration,
             'status_academic':academic_profile.status
-        }    
+        }
+        
+        academic_profile.save()
+
+        response = {
+            "success": "Datos personales guardados correctamente",
+            "status": status.HTTP_200_OK
+        }
+        return Response(response)
+
+    def get(self, request):
+        academic_profile = academicprofile.objects.filter(user_id = request.user.id)
+        serializer = academicprofileSerializer(academic_profile, many=True)
+        return Response (serializer.data, status=status.HTTP_200_OK) 
+
+ 
