@@ -24,8 +24,8 @@ class academicprofileView(APIView):
         serializer = academicprofileSerializer(data=data)
         serializer.is_valid(raise_exception=True)
 
-        level = serializer.data ["level"]
         name = serializer.data["name"]
+        education_level = serializer.data["education_level"]
         institution = serializer.data["institution"]
         duration = serializer.data["duration"]
         status_academic = serializer.data ["status_academic"]
@@ -34,8 +34,8 @@ class academicprofileView(APIView):
 
         academic_profile = academicprofile.objects.create(
             user_id=user_id,
-            level=level,
             name=name,
+            education_level=education_level,
             institution=institution,
             duration=duration,
             status_academic=status_academic
@@ -61,11 +61,11 @@ class academicprofileView(APIView):
     def find_answers(request):
         return {
             'id': academic_profile.codigo,
-            'level':academic_profile.level,
             'name': academic_profile.name,
+            'education_level':academic_profile.education_level,
             'institution':academic_profile.institution,
             'duration': academic_profile.duration,
-            'status_academic':academic_profile.status
+            'status_academic':academic_profile.status_academic
         }
         
         academic_profile.save()

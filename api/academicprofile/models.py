@@ -7,7 +7,7 @@ from django.conf import settings
 
 class academicprofile(models.Model):
 
-    LEVEL = (
+    EDUCATION_LEVEL = (
         (1, 'Carrera tecnica'),
         (2, 'Universidad'),
         (3, 'Maestría'),
@@ -26,7 +26,7 @@ class academicprofile(models.Model):
     institution = models.CharField(max_length=32)
     duration = models.CharField(max_length=32)
 
-    level = models.CharField(max_length=20, choices=LEVEL)
+    education_level = models.CharField(max_length=20, choices=EDUCATION_LEVEL)
 
     status_academic = models.CharField(max_length=20, choices=STATUS_ACADEMIC)
 
