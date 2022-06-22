@@ -87,6 +87,7 @@ TEMPLATES = [
     },
 ]
 
+WSGI_APPLICATION = 'core.wsgi.application'
 
 
 
@@ -233,3 +234,5 @@ SIMPLE_JWT = {
     'USER_ID_FIELD': 'id',
 }
 
+AUTHENTICATION_BACKENDS = (
+    ('django.contrib.auth.backends.ModelBackend'),)
