@@ -111,11 +111,11 @@ PG_PORT = config('POSTGRES_PORT', cast=int, default=5432)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': PG_DB,
-        'USER': PG_USER,
-        'PASSWORD': PG_PASSWD,
-        'HOST': PG_HOST,
-        'PORT': PG_PORT,
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
