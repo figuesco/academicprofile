@@ -238,3 +238,5 @@ SIMPLE_JWT = {
 
 AUTHENTICATION_BACKENDS = (
     ('django.contrib.auth.backends.ModelBackend'),)
+
+ASGI_APPLICATION = "myproject.asgi.application"
