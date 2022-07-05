@@ -55,7 +55,7 @@ INSTALLED_APPS += [
     # Local apps:
     'users',
     'academicprofile',
-    'notificaction',
+    'notificactions',
    
 ]
 
