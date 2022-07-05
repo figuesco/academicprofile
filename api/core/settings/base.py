@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'channels'
 ]
 
 INSTALLED_APPS += [
@@ -54,6 +55,7 @@ INSTALLED_APPS += [
     # Local apps:
     'users',
     'academicprofile',
+    'notificaction',
    
 ]
 
