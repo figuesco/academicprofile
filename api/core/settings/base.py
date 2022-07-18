@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'channels'
 ]
 
 INSTALLED_APPS += [
@@ -56,6 +55,7 @@ INSTALLED_APPS += [
     'users',
     'academicprofile',
     'notificactions',
+    'channels',
    
 ]
 
@@ -240,3 +240,13 @@ AUTHENTICATION_BACKENDS = (
     ('django.contrib.auth.backends.ModelBackend'),)
 
 ASGI_APPLICATION = "myproject.asgi.application"
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
+
